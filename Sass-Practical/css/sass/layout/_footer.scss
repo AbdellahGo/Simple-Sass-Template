@@ -1,0 +1,119 @@
+@use '../helpers/mixins' as *;
+@use '../helpers/variables' as *;
+
+.footer {
+    margin-top: 80px;
+    background-color: $greyColor;
+    .paren-box {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px 0;
+        @media (max-width: 767.98px) { 
+            flex-direction: column;
+        }
+        .gallery {
+            width: calc(50% - 20px);
+            @media (max-width: 767.98px) { 
+                width: 100%;
+            }
+            .box {
+                width: 100%;
+                margin-top: 10px;
+                display: flex;
+                align-items: flex-start;
+                gap: 20px;
+                .image {
+                    width: 30%;
+                    img {
+                        width: 100%;
+                    }
+                }
+                .content {
+                    width: 70%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    h4 {
+                        width: 100%;
+                        font-size: 20px;
+                    }
+                    p {
+                        width: 100%;
+                        color: #888;
+                        line-height: 1.7;
+                    }
+                }
+            }
+        }
+        .info {
+            width: calc(25% - 10px);
+            @media (max-width: 767.98px) { 
+                width: 100%;
+                border-top: 2px solid #777;
+                padding: 20px 0 0;
+            }
+            ul {
+                li {
+                    font-size: 20px;
+                    color: #333;
+                    font-weight: 600;
+                    &:not(:last-child) {
+                        margin-bottom: 10px;
+                    }
+                    span {
+                        color: #888;
+                    }
+                }
+            }
+            h4 {
+                font-size: 20px;
+                margin-top: 20px;
+            }
+            p {
+                font-size: 18px;
+                line-height: 1.8;
+                span {
+                    display: block;
+                    color: #333;
+                    span {
+                        display: inline;
+                        color: #888;
+                    }
+                }
+            }
+        }
+        .contact {
+            width: calc(25% - 10px);
+            @media (max-width: 767.98px) { 
+                width: 100%;
+                border-top: 1px solid black;
+                padding: 20px 0 0;
+            }
+            form {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                input[type='text'],
+                input[type='email'],
+                textarea {
+                    display: block;
+                    width: 100%;
+                    padding: 10px 20px;
+                    @include prefixer(border-radius, 5px, ('webkit', 'moz', 'o', 'ms'))
+                }
+                textarea {
+                    height: 100px;
+                }
+            }
+        }
+        .copyright {
+            width: 100%;
+            padding: 20px 0;
+            border-top: 2px solid #888;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    }
+}

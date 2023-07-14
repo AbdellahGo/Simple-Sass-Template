@@ -1,0 +1,19 @@
+@use '../helpers/variables' as *;
+
+.container {
+    width: 100%;
+    margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    @media #{$min-small } { 
+        width: 720px;
+    }
+    @media #{$min-medium } { 
+        width: 960px;
+    }
+    @media #{$min-large} { 
+        width: 1140px;
+    }
+}
+
+

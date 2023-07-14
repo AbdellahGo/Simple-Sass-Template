@@ -1,0 +1,69 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixins' as *;
+
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid $greyColor;
+
+    .parent {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 767.98px) {
+            flex-direction: column;
+        }
+
+        .navbar {
+            @include prefixer(border-radius, 5px, ('webkit', 'moz', 'ms', 'o'));
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            background-color: $mainColor;
+            overflow: hidden;
+            padding: 10px 20px;
+
+            @media (max-width: 767.98px) {
+                width: 100%;
+                margin-top: 20px;
+
+            }
+
+            @media (max-width: 575.98px) {
+                gap: 0;
+                flex-direction: column;
+            }
+
+            li {
+                cursor: pointer;
+                font-size: 18px;
+
+                @media (max-width: 575.98px) {
+                    font-size: 12px;
+                    padding: 10px;
+                    display: flex;
+                    justify-content: center;
+
+                    &:not(:last-child) {
+                        border-bottom: 1px solid #ddd;
+                    }
+
+                    &:hover {
+                        margin-bottom: 10px;
+                        @include prefixer(transition, 0.3s, ('webkit', 'moz', 'o', 'ms'));
+                        @include prefixer(transform, scale(1.5), ('webkit', 'moz', 'o', 'ms'));
+                    }
+                }
+
+                a {
+                    display: block;
+                    color: #eee;
+
+                    &:hover {
+                        color: #ddd;
+                    }
+                }
+            }
+        }
+    }
+}

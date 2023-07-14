@@ -1,0 +1,164 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixins' as *;
+
+// slider
+.slider {
+    q {
+        font: {
+            size: 22px;
+            weight: 700;
+            style: italic;
+        }
+
+        display: block;
+        width: 70%;
+        text-align: center;
+        padding: 20px;
+        margin: 20px auto 0;
+        color: #888;
+        @media (max-width: 767px) {
+            width: 100%;
+        }
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .bullets {
+        padding: 15px;
+        text-align: center;
+
+        li {
+            margin-right: 10px;
+            display: inline-block;
+            border: 5px solid #888;
+            @include prefixer(border-radius, 50%, ('webkit', 'moz', 'ms', 'o'));
+            padding: 5px;
+            @media (max-width: 575.98px) {
+                border: 2px solid #888;
+                padding: 3px;
+            }
+            &:first-of-type {
+                border-color: #333;
+            }
+        }
+    }
+}
+
+// slider
+
+
+
+// services
+.servic {
+    margin-top: 40px;
+
+    .paren-boxes {
+        margin-top: 40px;
+        display: grid;
+        @include grid(300px);
+        gap: 20px;
+
+        .box {
+            h3 {
+                font-size: 25px;
+            }
+
+            p {
+                margin-top: 10px;
+                font-size: 18px;
+                color: #888;
+            }
+
+            a {
+                display: block;
+                margin-top: 10px;
+                color: #333;
+
+                font: {
+                    size: 20px;
+                    weight: 700;
+                }
+            }
+        }
+    }
+}
+
+// services
+
+
+// players
+.players {
+    margin-top: 80px;
+    .paren-boxes {
+        margin-top: 40px;
+        display: grid;
+        @include grid(250px);
+        gap: 40px 20px;
+
+        .box {
+            .image {
+                width: 100%;
+                height: 50%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+
+            h3 {
+                font-size: 25px;
+                height: calc(10% - 10px);
+                margin-top: 10px;
+
+                span {
+                    color: #888;
+                    font-size: 18px;
+                }
+            }
+
+            p {
+                height: calc(30% - 5px);
+                margin-top: 5px;
+                font-size: 18px;
+                color: #888;
+            }
+
+            a {
+                height: calc(10% - 10px);
+                display: block;
+                margin-top: 10px;
+                color: #333;
+
+                font: {
+                    size: 20px;
+                    weight: 700;
+                }
+            }
+        }
+    }
+}
+
+// players
+
+// lorem-ipsum
+.lorem-ipsum {
+    margin-top: 80px;
+    .parent-box {
+        margin-top: 40px;
+        display: grid;
+        @include grid(300px);
+        gap: 20px;
+        .lorem-box {
+            img {
+                width: 100%;
+                height: 220px;
+                object-fit: cover;
+            }
+        }
+    }
+}
+// lorem-ipsum

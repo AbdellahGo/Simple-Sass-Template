@@ -1,0 +1,15 @@
+@use '../helpers/variables' as *;
+@use '../helpers/mixins' as *;
+.main-button {
+    background-color: rgba($mainColor, .8);
+    color: #FFF;
+    padding: 10px 15px;
+    text-align: center;
+    min-width: 120px;
+    cursor: pointer;
+    @include prefixer(border-radius,5px,('webkit','moz','o','ms'));
+    @include prefixer(transition, 0.3s,('webkit','moz','o','ms'));
+    &:hover {
+        background-color: $mainColor;
+    }
+}

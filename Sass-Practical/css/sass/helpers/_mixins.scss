@@ -1,0 +1,59 @@
+/*
+    media query mixin
+*/
+
+
+@mixin minMedium {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+
+/*
+    Overlay mixin
+*/
+
+@mixin overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+};
+
+
+/*
+    prefixes mixin
+*/
+
+
+@mixin prefixer($property, $value, $prefixes: ()) {
+    #{$property}: $value;
+    @each $prefix in $prefixes {
+        #{"-" + $prefix + "-" + $property}: $value;
+    }
+};
+
+/*
+    animation mixin
+*/
+
+@mixin keyFram($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+/*
+    grid mixin
+*/
+
+@mixin grid($min-width) {
+    grid-template-columns: repeat(auto-fit, minmax(#{$min-width}, 1fr));
+}
